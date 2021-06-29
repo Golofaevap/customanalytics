@@ -3,19 +3,26 @@ const router = express.Router();
 // const Part = require("../models/parts");
 
 router.get("/", async (req, res) => {
+    console.log("get");
     try {
-        res.json({parts:2});
+        const { code, clientId } = req.query;
+        console.log(code, clientId);
+        res.json({ code, clientId });
     } catch (err) {
         res.json({ message: err });
     }
 });
 
 router.post("/", async (req, res) => {
+    console.log("post");
     try {
-        res.json({parts:1});
+        const { code, clientId } = req.body;
+        console.log(code, clientId);
+
+        res.json({ code, clientId });
     } catch (err) {
         res.json({ message: err });
     }
-})
+});
 
 module.exports = router;
