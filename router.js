@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 function sentOfflineConversion(code, clientId) {
     const baseUrl = `https://www.google-analytics.com/collect`;
     // const baseUrl = `https://www.google-analytics.com/debug/collect`;
-    const tail = `?v=1&tid=${code}&cid=${clientId}&t=event&ec=Transaction&ea=Offline&el=${clientId}&ni=true&ti=TI-${Math.round(
+    const tail = `?v=1&tid=${code}&cid=${clientId}&t=event&ec=t&ea=o&el=${clientId}&ni=true&ti=TI-${Math.round(
         Math.random() * 99999999
     )}&tr=100&pa=purchase&pr1nm=Offline_Conversion&pr1qt=1&pr1pr=100&pr1ca=Offline&ua=AppleWebKit/537`;
     const sendUrl = `${baseUrl}${tail}`;
