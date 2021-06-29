@@ -18,6 +18,6 @@ app.get("/", (req, res) => {
     res.send("we are on home");
 });
 
-app.listen(3031, () => {
+app.listen(process.env.PORT || 3031, () => {
     console.log(`Example app listening at http://localhost:${3001}`);
 });
