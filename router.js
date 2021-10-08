@@ -42,12 +42,14 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
     console.log("post");
     try {
+        console.log(req);
         const { code, clientId } = req.body;
         console.log(code, clientId);
         sentOfflineConversion(code, clientId);
 
         res.json({ code, clientId });
     } catch (err) {
+        console.log(err);
         res.json({ message: err });
     }
 });
